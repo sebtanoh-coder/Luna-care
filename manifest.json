@@ -1,10 +1,12 @@
 {
+  "id": "/",
   "name": "Luna Care - Wellness & Cycle Tracker",
   "short_name": "LunaCare",
   "description": "Your wellness companion for tracking cycles, mood, and self-care",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
   "orientation": "portrait-primary",
   "background_color": "#F9FAFB",
   "theme_color": "#A78BFA",
@@ -92,6 +94,36 @@
       "label": "Desktop Dashboard"
     }
   ],
+  
+  "shortcuts": [
+    {
+      "name": "Track Today",
+      "short_name": "Track",
+      "description": "Log your daily wellness",
+      "url": "/"
+    },
+    {
+      "name": "Calendar",
+      "short_name": "Calendar",
+      "description": "View your cycle calendar",
+      "url": "/"
+    }
+  ],
+  
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
   
   "related_applications": [],
   "prefer_related_applications": false
