@@ -1,5 +1,5 @@
 {
-  "id": "/",
+  "id": "/?source=pwa",
   "name": "Luna Care - Wellness & Cycle Tracker",
   "short_name": "LunaCare",
   "description": "Your wellness companion for tracking cycles, mood, and self-care",
@@ -13,6 +13,7 @@
   "lang": "en",
   "dir": "ltr",
   "categories": ["health", "lifestyle", "wellness"],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
   
   "icons": [
     {
@@ -46,13 +47,25 @@
       "purpose": "any"
     },
     {
+      "src": "/icons/180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "/icons/android-launchericon-192-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/android-launchericon-512-512.png",
+      "src": "/icons/256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
@@ -100,13 +113,27 @@
       "name": "Track Today",
       "short_name": "Track",
       "description": "Log your daily wellness",
-      "url": "/"
+      "url": "/",
+      "icons": [
+        {
+          "src": "/icons/android-launchericon-96-96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     },
     {
-      "name": "Calendar",
+      "name": "View Calendar",
       "short_name": "Calendar",
       "description": "View your cycle calendar",
-      "url": "/"
+      "url": "/",
+      "icons": [
+        {
+          "src": "/icons/android-launchericon-96-96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
   ],
   
@@ -123,6 +150,35 @@
   
   "launch_handler": {
     "client_mode": "navigate-existing"
+  },
+  
+  "protocol_handlers": [
+    {
+      "protocol": "web+lunacare",
+      "url": "/?from=%s"
+    }
+  ],
+  
+  "file_handlers": [
+    {
+      "action": "/open",
+      "accept": {
+        "text/csv": [".csv"],
+        "application/json": [".json"]
+      },
+      "icons": [
+        {
+          "src": "/icons/android-launchericon-192-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    }
+  ],
+  
+  "edge_side_panel": {
+    "preferred_width": 400
   },
   
   "related_applications": [],
